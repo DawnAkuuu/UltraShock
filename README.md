@@ -15,10 +15,12 @@ https://docs.pishock.com/pishock/api-documentation/%E2%9A%A1-api-documentation-i
 
 ## How to install the mod:
 
-As of this moment, I am unsure where a good place to put the changing file into that works for everyones systems but for now you can compile the project yourself.
+~~As of this moment, I am unsure where a good place to put the changing file into that works for everyones systems but for now you can compile the project yourself.~~
 
-If you want to know how to compile the project, there is a tutorial here that teaches you how to create your own mod. Just follow it and dump the source code in main.cs into that file and follow the rest of the tutorial as normal.
+~~If you want to know how to compile the project, there is a tutorial here that teaches you how to create your own mod. Just follow it and dump the source code in main.cs into that file and follow the rest of the tutorial as normal.~~
 
-https://www.youtube.com/watch?v=fL4koeLJ4ko
+~~https://www.youtube.com/watch?v=fL4koeLJ4ko~~
 
-### Make sure you change the file directories in both the main.cs file and the main.py file
+Got some help from the ultrakill modding discord! This should work now. Just place the .dll file into your bepinex plugin directory and it should be good to go! If not then you can also import it as a local mod in R2Modman (feels easier to me to do it this way)! Big thanks to Plonk and Trev!
+
+~~### Make sure you change the file directories in both the main.cs file and the main.py file~~
