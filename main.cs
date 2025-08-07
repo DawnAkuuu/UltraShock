@@ -15,6 +15,8 @@ namespace ShockMod
         {
             // This method is called when the plugin is loaded
             Logger.LogInfo("Shock Mod Loaded!");
+            Logger.LogInfo("This mod is writing ultrakill_event.txt to " + Application.persistentDataPath);
+
 
 
             // Initialize Harmony
@@ -22,6 +24,7 @@ namespace ShockMod
             harmony.PatchAll();
         }
 
+        // Patch the GetHurt() function in ultrakill
         [HarmonyPatch(typeof(NewMovement), "GetHurt")]
         class GetHurtPatch 
         {
@@ -31,7 +34,8 @@ namespace ShockMod
                 {
                     try
                     {
-                        File.WriteAllText(@"C:\Users\{USERNAME}\Documents\ultrakill_event.txt", "PlayerDied");
+                        // Write PlayerDied to a folder in the application data path.
+                        File.WriteAllText(Application.persistentDataPath + @"/ultrakill_event.txt", "PlayerDied");
                     }
                     catch (IOException ex)
                     {
