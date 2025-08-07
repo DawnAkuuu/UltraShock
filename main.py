@@ -1,16 +1,18 @@
 from pishock import PiShockAPI
 import time, os
+from pathlib import Path
 
 username = "" # PiShock username
 api_key = "" # PiShock api key
 sharecode = "" # Shock module share code
 
 api = PiShockAPI(username, api_key)
-
 shocker = api.shocker(sharecode)
 
+homeDir = Path.home()
+
 last_modified = 0
-path = r"{PATH}"
+path = f"{homeDir}" + r"\AppData\LocalLow\Hakita\ULTRAKILL\ultrakill_event.txt"
 
 while True:
     try:
@@ -21,7 +23,7 @@ while True:
                 print("Event:", f.read())
             shocker.beep(duration=1)
             time.sleep(1)
-            shocker.shock(duration=1, intensity=20) # Change the duration and intensity of the shock here.
+            shocker.shock(duration=1, intensity=20)
 
     except FileNotFoundError:
         pass
